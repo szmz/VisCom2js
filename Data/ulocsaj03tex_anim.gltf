@@ -1,0 +1,335 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 150012,
+            "max" : [
+                29914
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 29915,
+            "max" : [
+                28.788999557495117,
+                32.92559814453125,
+                0.0010000000474974513
+            ],
+            "min" : [
+                -28.788799285888672,
+                -32.92660140991211,
+                -134.131103515625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 29915,
+            "max" : [
+                0.99969482421875,
+                0.999969482421875,
+                0.999908447265625
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.999969482421875,
+                -0.999969482421875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 29915,
+            "max" : [
+                0.9999985694885254,
+                0.9999406337738037,
+                0.9564327001571655,
+                1.0
+            ],
+            "min" : [
+                -0.9019864201545715,
+                -0.9999953508377075,
+                -0.9538431167602539,
+                -1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 29915,
+            "max" : [
+                0.9182040095329285,
+                1.8001041412353516
+            ],
+            "min" : [
+                0.08346578478813171,
+                -1.158046007156372
+            ],
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 6,
+            "max" : [
+                6.208333333333333
+            ],
+            "min" : [
+                0.0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 18,
+            "max" : [
+                0.0,
+                0.0,
+                -0.0
+            ],
+            "min" : [
+                0.0,
+                0.0,
+                -0.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 150,
+            "max" : [
+                6.208333333333333
+            ],
+            "min" : [
+                0.0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 150,
+            "max" : [
+                0.70710688829422,
+                0.7071066498756409,
+                0.7047326564788818,
+                0.7071067094802856
+            ],
+            "min" : [
+                -1.1520232590100932e-07,
+                -0.7047325372695923,
+                -0.70710688829422,
+                -1.1520230458472724e-07
+            ],
+            "type" : "VEC4"
+        }
+    ],
+    "animations" : [
+        {
+            "channels" : [
+                {
+                    "sampler" : 0,
+                    "target" : {
+                        "node" : 3,
+                        "path" : "translation"
+                    }
+                },
+                {
+                    "sampler" : 1,
+                    "target" : {
+                        "node" : 3,
+                        "path" : "rotation"
+                    }
+                }
+            ],
+            "name" : "SYLT_Business_Wom_13Action",
+            "samplers" : [
+                {
+                    "input" : 5,
+                    "interpolation" : "CUBICSPLINE",
+                    "output" : 6
+                },
+                {
+                    "input" : 7,
+                    "interpolation" : "LINEAR",
+                    "output" : 8
+                }
+            ]
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 300024,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 358980,
+            "byteOffset" : 300024,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 358980,
+            "byteOffset" : 659004,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 478640,
+            "byteOffset" : 1017984,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 239320,
+            "byteOffset" : 1496624,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24,
+            "byteOffset" : 1735944
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 216,
+            "byteOffset" : 1735968
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 600,
+            "byteOffset" : 1736184
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2400,
+            "byteOffset" : 1736784
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1739184,
+            "uri" : "ulocsaj03tex_anim.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "IMG_0273",
+            "uri" : "IMG_0273.png"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "SYLT_Business_Wom_13_diffuse",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    0.6400000190734865,
+                    1.0
+                ],
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "SYLT_Business_Wom_13",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Point",
+            "translation" : [
+                -5.286257743835449,
+                6.264100551605225,
+                10.898990631103516
+            ]
+        },
+        {
+            "name" : "Point.001",
+            "translation" : [
+                3.580200672149658,
+                0.590160608291626,
+                -14.461817741394043
+            ]
+        },
+        {
+            "name" : "Point.002",
+            "translation" : [
+                9.095964431762695,
+                10.673075675964355,
+                6.979913711547852
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "SYLT_Business_Wom_13",
+            "rotation" : [
+                0.7071068286895752,
+                0.0,
+                -0.0,
+                0.7071067094802856
+            ],
+            "scale" : [
+                0.08343927562236786,
+                0.08343927562236786,
+                0.08343927562236786
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                3,
+                2,
+                1,
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}
