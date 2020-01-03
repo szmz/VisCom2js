@@ -123,7 +123,7 @@
         <a-marker id="animated-marker05" type='pattern' preset="custom" url='Data/patterns/pattern-artag_364.patt'>
           <a-entity gltf-model="#napoleon" scale=".1 .1 .1" rotation="-90 0 0" position="0 0 1" shadow="cast: true">
             <a-entity light="type: directional; color: #00F; intensity: 1.5" position="0 100 100"></a-entity>
-            <a-video src="#pasimutogat" position="10 0 0" width="16" height="12" material="blending: additive; transparent:true; opacity: .35;"></a-video>
+            <a-video src="#pasimutogat" position="10 0 0" rotation="30 0 0" width="16" height="12" material="blending: additive; transparent:true; opacity: .55;"></a-video>
         </a-marker>
 
         <a-marker id="animated-marker06" type='pattern' preset="custom" url='Data/patterns/pattern-artag_476.patt'>
@@ -159,11 +159,12 @@
 
         <a-marker id="animated-marker08" type='pattern' preset="custom" url='Data/patterns/pattern-artag_700.patt'>
 
-           <a-entity geometry="primitive:plane; width:4; height:3"
+           <!-- <a-entity geometry="primitive:plane; width:4; height:3"
                    rotation="-90 0 0"
                    material="shader:video;src:url(Data/pasimutogat.mp4); blending: additive; transparent:true; opacity: .9; repeat: 10 10"
-                   position="0 0 0"></a-entity>
-          <a-entity gltf-model="#ulocsaj_origtex" scale=".3 .3 .3" rotation="-90 0 0">
+                   position="0 0 0"></a-entity> -->
+          <a-entity gltf-model="#ulocsaj_origtex" scale=".2 .2 .2" rotation="-90 0 0">
+            <a-box depth="2" position="4 0 0" height="4" width="4" material="shader:video;src:#my-video;"></a-box>
         </a-marker>
 
 
@@ -176,6 +177,7 @@
         <a-marker id="animated-marker10" type='pattern' preset="custom" url='Data/patterns/pattern-artag_924.patt'>
 <!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
         <a-entity geometry="primitive:box;" position="2 0 1" material="shader:video;src:url(Data/tancolocsaj.mp4);blending: additive; transparent:true; opacity: .35;"></a-entity>
+
         <a-entity
             obj-model="obj: #LuYu"
             position="0 0 0"
