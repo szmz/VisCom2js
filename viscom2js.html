@@ -38,11 +38,12 @@
             <a-asset-item id="childanim" src="Data/childanim.gltf" preload="auto"></a-asset-item>
             <video id="webcam" playsinline></video>
             <video id="my-video" src="Data/MOV_szem2x2.mp4" autoplay preload="auto" loop="true">
+            <video id="pasimutogat" src="Data/pasimutogat.mp4" autoplay preload="auto" loop="true">
             <video id="geoanim" src="Data/0001-0050.mkv" autoplay preload="auto" loop="true">
               <canvas id="cam2"></canvas>
         </a-assets>
 
-        <a-marker type='pattern' preset="custom" url='Data/patterns/pattern-artag_4.patt'>
+        <a-marker id="animated-marker00" type='pattern' preset="custom" url='Data/patterns/pattern-artag_4.patt'>
 <!--            <a-box position='0 0.5 0' color="yellow"></a-box>-->
 <!--            <a-box position="0 0 0" rotation="0 45 0" shadow material="src: #webcam"></a-box>-->
 <!--            <a-entity geometry="primitive:box;" material="src:#webcam; opacity: .6;"></a-entity>-->
@@ -67,7 +68,7 @@
 
 
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_9.patt'>
+        <a-marker id="animated-marker01" type='pattern' preset="custom" url='Data/patterns/pattern-artag_9.patt'>
 
 
             <a-entity
@@ -81,7 +82,7 @@
 
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_14.patt'>
+        <a-marker id="animated-marker02" type='pattern' preset="custom" url='Data/patterns/pattern-artag_14.patt'>
            <!-- <a-entity geometry="primitive:box;"></a-entity> -->
             <a-entity
                 gltf-model="#childanim"
@@ -89,13 +90,12 @@
                 rotation="-90 0 0"
                 scale=".15 .15 .15"
                 animation-mixer="loop:repeat"
-                <!-- material="shader:video;src:url(Data/MOV_SZEM.mp4);" -->
                 >
             </a-entity>
         </a-marker>
 
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_129.patt'>
+        <a-marker id="animated-marker03" type='pattern' preset="custom" url='Data/patterns/pattern-artag_129.patt'>
            <a-entity geometry="primitive:box;" position="1 0 0" material="src:url(Data/IMG_0273.png); opacity: .5; blending: additive"></a-entity>
             <a-entity
 
@@ -114,19 +114,19 @@
                       ></a-entity>
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_252.patt'>
+        <a-marker id="animated-marker04" type='pattern' preset="custom" url='Data/patterns/pattern-artag_252.patt'>
            <!-- <a-entity geometry="primitive:box;"></a-entity> -->
            <a-entity gltf-model="#orrszarvu" scale=".2 .2 .2" rotation="-90 0 0">
                        </a-entity>
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_364.patt'>
-          <a-entity gltf-model="#napoleon" scale=".1 .1 .1" rotation="-90 0 0" shadow="cast: true">
-            <!-- <a-entity light="type: directional; color: #FFF; intensity: 1.5" position="0 100 100"></a-entity> -->
-
+        <a-marker id="animated-marker05" type='pattern' preset="custom" url='Data/patterns/pattern-artag_364.patt'>
+          <a-entity gltf-model="#napoleon" scale=".1 .1 .1" rotation="-90 0 0" position="0 0 1" shadow="cast: true">
+            <a-entity light="type: directional; color: #00F; intensity: 1.5" position="0 100 100"></a-entity>
+            <a-video src="#pasimutogat" position="10 0 0" width="16" height="12" material="blending: additive; transparent:true; opacity: .35;"></a-video>
         </a-marker>
 
-        <a-marker type='pattern' preset="custom" url='Data/patterns/pattern-artag_476.patt'>
+        <a-marker id="animated-marker06" type='pattern' preset="custom" url='Data/patterns/pattern-artag_476.patt'>
 <!--            <a-box position='0 0.5 0' color="yellow"></a-box>-->
            <!-- <a-box position="0 0 -1" rotation="0 45 0"  material="shader: flat; src: #webcam; transparent: true; opacity: .5; blending: additive"></a-box>
            <a-entity geometry="primitive:box;" material="src:#cam2; opacity: .6;" canvas-updater></a-entity>
@@ -146,7 +146,7 @@
                 >
             </a-entity>
         </a-marker>
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_588.patt'>
+        <a-marker id="animated-marker07" type='pattern' preset="custom" url='Data/patterns/pattern-artag_588.patt'>
           <a-entity
               obj-model="obj: #bull"
               position="0 0 0"
@@ -157,8 +157,8 @@
           </a-entity>
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_700.patt'>
-           <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/tancolocsaj.mp4);"></a-entity>
+        <a-marker id="animated-marker08" type='pattern' preset="custom" url='Data/patterns/pattern-artag_700.patt'>
+
            <a-entity geometry="primitive:plane; width:4; height:3"
                    rotation="-90 0 0"
                    material="shader:video;src:url(Data/pasimutogat.mp4); blending: additive; transparent:true; opacity: .9; repeat: 10 10"
@@ -167,13 +167,15 @@
         </a-marker>
 
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_812.patt'>
+        <a-marker id="animated-marker09" type='pattern' preset="custom" url='Data/patterns/pattern-artag_812.patt'>
           <a-entity gltf-model="#bronze_kovetemel" scale=".3 .3 .3" rotation="-90 0 0">
+            <a-entity light="type: directional; color: #AAF; intensity: 1.5" position="0 100 100"></a-entity>
 
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_924.patt'>
+        <a-marker id="animated-marker10" type='pattern' preset="custom" url='Data/patterns/pattern-artag_924.patt'>
 <!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
+        <a-entity geometry="primitive:box;" position="2 0 1" material="shader:video;src:url(Data/tancolocsaj.mp4);blending: additive; transparent:true; opacity: .35;"></a-entity>
         <a-entity
             obj-model="obj: #LuYu"
             position="0 0 0"
@@ -187,7 +189,7 @@
 
         </a-marker>
 
-        <a-marker id="animated-marker" type='pattern' preset="custom" url='Data/patterns/pattern-artag_1023.patt'>
+        <a-marker id="animated-marker11" type='pattern' preset="custom" url='Data/patterns/pattern-artag_1023.patt'>
 <!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
         <a-entity
             obj-model="obj: #pelenkaschildflipped"
