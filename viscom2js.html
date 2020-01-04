@@ -39,7 +39,7 @@
             <video id="webcam" playsinline></video>
             <video id="my-video" src="Data/MOV_szem2x2.mp4" autoplay preload="auto" loop="true">
             <video id="pasimutogat" src="Data/pasimutogat.mp4" autoplay preload="auto" loop="true">
-            <video id="geoanim" src="Data/0001-0050.mkv" autoplay preload="auto" loop="true">
+            <video id="tancolocsaj" src="Data/tancolocsaj.mp4" autoplay preload="auto" loop="true">
               <canvas id="cam2"></canvas>
         </a-assets>
 
@@ -164,7 +164,7 @@
                    material="shader:video;src:url(Data/pasimutogat.mp4); blending: additive; transparent:true; opacity: .9; repeat: 10 10"
                    position="0 0 0"></a-entity> -->
           <a-entity gltf-model="#ulocsaj_origtex" scale=".2 .2 .2" rotation="-90 0 0">
-            <a-box depth="2" position="4 0 0" height="4" width="4" material="shader:video;src:#my-video;"></a-box>
+            <a-box depth="2" position="4 0 0" height="4" width="4" material="shader:video;src:#my-video;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000"></a-box>
         </a-marker>
 
 
@@ -176,7 +176,7 @@
 
         <a-marker id="animated-marker10" type='pattern' preset="custom" url='Data/patterns/pattern-artag_924.patt'>
 <!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
-        <a-entity geometry="primitive:box;" position="2 0 1" material="shader:video;src:url(Data/tancolocsaj.mp4);blending: additive; transparent:true; opacity: .35;"></a-entity>
+        <a-entity geometry="primitive:box;" position="2 0 1" material="shader:video;src:url(Data/tancolocsaj.mp4);blending: additive; transparent:true; opacity: .35;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000"></a-entity>
 
         <a-entity
             obj-model="obj: #LuYu"
