@@ -1,0 +1,316 @@
+<html>
+    <head>
+        <script src="Ar-js1.0/aframe.min.js"></script>
+        <script src="Ar-js1.0/aframe-ar.js"></script>
+        <script src="Ar-js1.0/aframe-extras.loaders.min.js"></script>
+        <script src="Ar-js1.0/aframe-vid-shader.min.js"></script>
+        <script>
+          THREEx.ArToolkitContext.baseURL = 'Ar-js1.0/three.js/'
+          //  ez ahhoz kell, h megtalalja a camera-para.dat-ot az Ar-js1.0 folderben
+          // az aframe-ar.js-ben ehhez atirtam az 5707-es sorban erre:
+          //   cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../camera_para.dat',
+        </script>
+        <script>
+      AFRAME.registerComponent('modify-materials', {
+        init: function () {
+          // Wait for model to load.
+          this.el.addEventListener('model-loaded', () => {
+            // Grab the mesh / scene.
+            const obj = this.el.getObject3D('mesh');
+            // Go over the submeshes and modify materials we want.
+            obj.traverse(node => {
+              console.log(node.name);
+              // if (node.name.indexOf('Napoleon') !== -1) {
+                if(node.material){
+                  console.log(node.name, node.material);
+                  //node.material.color.set('red');
+                  node.material.opacity=0.85;
+                  node.material.transparent=true;
+                }
+              // }
+
+            });
+          });
+        }
+      });
+    </script>
+    </head>
+    <body style='margin : 0px; overflow: hidden;'>
+        <!-- we add detectionMode and matrixCodeType to tell AR.js to recognize barcode markers -->
+<!--        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>-->
+        <a-scene id="a-scene" stats embedded arjs='sourceType: webcam; trackingMethod: best; sourceWidth:1280; sourceHeight:960; debugUIEnabled: false;' antialias="true" light="defaultLightsEnabled: false" vr-mode-ui="enabled: false" inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
+        <a-assets>
+          <a-asset-item id="arc+orr" src="Data/arc+orr01.png" preload="auto"></a-asset-item>
+
+            <a-asset-item id="pelenkaschild" src="Data/pelenkaschild01.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="pelenkaschildflipped" src="Data/pelenkaschild01flipped.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="ear" src="Data/earcanal.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="bull" src="Data/bull.obj" preload="auto"></a-asset-item>
+            <!-- <a-asset-item id="animated-asset" src="Data/ulocsaj03tex_anim.gltf" preload="auto"></a-asset-item> -->
+
+
+            <a-asset-item id="orrszarvu" src="Data/Orrszarvu_tiny_notransp.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="bronze_kovetemel" src="Data/bronze_kovetemel.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="ulocsaj_origtex" src="Data/ulocsaj_origtext.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="deer" src="Data/deer.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="foot" src="Data/foot5.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="soldier" src="Data/soldier.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="beethoven" src="Data/beethoven_grave.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="LuYu" src="Data/LuYu.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="LuYu_mtl" src="Data/LuYu.mtl" preload="auto"></a-asset-item>
+            <a-asset-item id="drapszek" src="Data/drapszektiny.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="drapszek_novid" src="Data/drapszektiny_novid.gltf" preload="auto"></a-asset-item>
+
+            <a-asset-item id="kezek" src="Data/Cavepainting_hands_SantaCruz-CuevaManos_cropped2.png" preload="auto"></a-asset-item>
+            <a-asset-item id="casualwoman" src="Data/casualwoman01.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="casualwoman_mtl" src="Data/casualwoman01.mtl" preload="auto"></a-asset-item>
+            <a-asset-item id="casualwoman2" src="Data/casualwoman02.obj" preload="auto"></a-asset-item>
+            <a-asset-item id="casualwoman2_mtl" src="Data/casualwoman02.mtl" preload="auto"></a-asset-item>
+            <a-asset-item id="childanim" src="Data/childanim.gltf" preload="auto"></a-asset-item>
+            <!-- <video id="webcam" playsinline></video> -->
+            <video id="my-video" src="Data/MOV_szem2x2.mp4" playsinline autoplay preload="auto" loop="true">
+            <video id="tancolocsaj" src="Data/tancolocsaj.mp4" playsinline autoplay preload="auto" loop="true">
+              <canvas id="cam2"></canvas>
+        </a-assets>
+
+        <a-marker id="animated-marker00" type='pattern' preset="custom" url='Data/patterns/pattern-artag_4.patt'>
+<!--            <a-box position='0 0.5 0' color="yellow"></a-box>-->
+<!--            <a-box position="0 0 0" rotation="0 45 0" shadow material="src: #webcam"></a-box>-->
+<!--            <a-entity geometry="primitive:box;" material="src:#webcam; opacity: .6;"></a-entity>-->
+            </a-entity>
+            <a-entity
+                obj-model="obj: #pelenkaschild"
+                position="0 0 0"
+                rotation="-90 0 0"
+                scale=".5 .5 .5"
+                material="src:url(Data/arc+orr01.jpg); repeat: 2 2; opacity: .9;"
+                >
+            </a-entity>
+            <!-- <a-entity
+                gltf-model="#animated-asset"
+                position="0 0 1"
+                rotation="-90 0 0"
+                scale=".2 0.2 0.2"
+                animation-mixer="loop:repeat"
+                material="shader: flat; transparent: true; opacity: .6;"
+                >
+            </a-entity> -->
+        </a-marker>
+
+
+
+        <a-marker id="animated-marker01" type='pattern' preset="custom" url='Data/patterns/pattern-artag_9.patt'>
+          <a-entity
+              obj-model="obj: #bull"
+              position="0 0 0"
+              rotation="-90 0 0"
+              scale=".2 .2 .2"
+              material="shader:standard; src:url(Data/MOV_szem2x2_01_jav.jpg); repeat: 2 2; opacity: .9;"
+              >
+          </a-entity>
+        </a-marker>
+
+        <a-marker id="animated-marker02" type='pattern' preset="custom" url='Data/patterns/pattern-artag_14.patt'>
+          <a-entity scale=".7 .7 .7">
+            <a-entity obj-model="obj: #casualwoman;"
+                      position="-1 0 -0.6"
+                      rotation="-90 0 0"
+                      scale=".35 .35 .35"
+                      material="shader:standard; src:url(Data/IMG_0273.png); repeat: 1.1 1.1; opacity: 1; blending: additive"
+                      >
+            </a-entity>
+              <a-entity
+                  gltf-model="#childanim"
+                  position="0 0 -0.5"
+                  rotation="-90 0 0"
+                  scale=".15 .15 .15"
+                  animation-mixer="loop:repeat"
+                  >
+              </a-entity>
+              <a-entity obj-model="obj: #casualwoman2;"
+                        position="1 0 -0.6"
+                        rotation="-90 0 0"
+                        scale=".15 .15 .15"
+                        material="shader:standard; src:url(Data/honaljak.png); repeat: 1.1 1.1; opacity: 1; blending: additive"
+                        >
+              </a-entity>
+            </a-entity>
+        </a-marker>
+
+
+        <a-marker id="animated-marker03" type='pattern' preset="custom" url='Data/patterns/pattern-artag_129.patt'>
+           <!-- <a-entity geometry="primitive:box;" position="1 0 0" material="src:url(Data/IMG_0273.png); opacity: .5; blending: additive"></a-entity> -->
+           <a-entity gltf-model="#soldier" scale=".4 .4 .4" rotation="-90 0 0" position="-1 0 0" modify-materials></a-entity>
+           <a-entity animation="property: rotation; from: 0 0 -360 to: 0 0 360; loop: true; dur: 20000" >
+            <a-entity gltf-model="#beethoven" scale=".4 .4 .4" rotation="-90 0 0" position="1 0 0"></a-entity>
+          </a-entity>
+          <a-entity light="type: directional; color: #AFA; intensity: 1.5" position="0 100 100"></a-entity>
+            <!-- <a-entity
+
+                obj-model="obj:#kosztumoscsaj_obj; "
+                position="1 0 0"
+                rotation="-90 0 0"
+                scale=".16 .16 .16"
+                material="shader: standard; src:url(Data/Frans_Hals_fisherboys1629_cropped_small.png); repeat: 1.1 1.1; opacity: 1; blending: additive;"
+                >
+            </a-entity>
+            <a-entity obj-model="obj: #rp_dennis;"
+                      position="0 0 -0"
+                      rotation="-90 0 0"
+                      scale=".25 .25 .25"
+                      material="shader: standard; src:url(Data/fureszelnek.png); repeat: .8 .8;opacity: 1; blending: additive;"
+                      animation="property: rotation; from: -90 0 0; to: 270 360 360; loop: true; dur: 10000"
+                      ></a-entity> -->
+        </a-marker>
+
+        <a-marker id="animated-marker04" type='pattern' preset="custom" url='Data/patterns/pattern-artag_252.patt'>
+           <!-- <a-entity geometry="primitive:box;"></a-entity> -->
+           <a-entity gltf-model="#orrszarvu" scale=".2 .2 .2" rotation="-90 0 0">
+                       </a-entity>
+        </a-marker>
+
+        <a-marker id="animated-marker05" type='pattern' preset="custom" url='Data/patterns/pattern-artag_364.patt'>
+          <!-- <a-entity geometry="primitive:plane; width:4; height:3"
+                  rotation="-90 0 0"
+                  material="shader:video;src:url(Data/pasimutogat.mp4); blending: additive; transparent:true; opacity: .9; repeat: 10 10"
+                  position="0 0 0"></a-entity> -->
+         <a-entity gltf-model="#ulocsaj_origtex" scale=".3 .3 .3" rotation="-90 0 0" animation="property: rotation; from: -90 0 0; to: 270 360 0; loop: true; dur: 10000"></a-entity>
+         <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 20000">
+               <a-entity position="2 0 0">
+                 <!-- <a-box></a-box> -->
+                   <a-box depth="2" position="0 0 0" height="1" width="2" material="shader:video;src:#my-video;blending: additive;" animation="property: rotation; to: 360 360 360; loop: true; dur: 20000"></a-box>
+               </a-entity>
+         </a-entity>
+           <a-icosahedron color="#FFFFFF" radius="3" material="wireframe: true;" animation="property: rotation; to: -360 360 360; loop: true; dur: 10000"></a-icosahedron>
+           <a-dodecahedron color="#FFFFFF" radius="3" material="wireframe: true;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000"></a-dodecahedron>
+        </a-marker>
+
+        <a-marker id="animated-marker06" type='pattern' preset="custom" url='Data/patterns/pattern-artag_476.patt'>
+<!--            <a-box position='0 0.5 0' color="yellow"></a-box>-->
+           <!-- <a-box position="0 0 -1" rotation="0 45 0"  material="shader: flat; src: #webcam; transparent: true; opacity: .5; blending: additive"></a-box>
+           <a-entity geometry="primitive:box;" material="src:#cam2; opacity: .6;" canvas-updater></a-entity>
+            <a-camera camrender="cid: cam2" active="false">
+            </a-camera>
+            <a-entity geometry="primitive:plane; width:2; height:2"
+                    material="src:#cam2; opacity: .9" canvas-updater
+                    position="0 3 0"></a-entity> -->
+            <a-icosahedron color="#FFFFFF" radius="1" position ="0 0 -.5" material="wireframe: true; color: #F00;" animation="property: rotation; to: -360 -360 360; loop: true; dur: 10000"></a-icosahedron>
+            <a-entity geometry="primitive:box;" position="0 0 -.5" material="shader:video;src:#tancolocsaj;blending: additive; transparent:true; opacity: .95;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000"></a-entity>
+            <a-entity
+                obj-model="obj: #drapszek"
+                position="1 0 1"
+                rotation="-90 0 0"
+                scale=".3 .3 .3"
+                material=" src:url(Data/szem_07.png); repeat: 3 3; opacity: .9;"
+                >
+            </a-entity>
+
+            <a-entity
+                gltf-model="#drapszek_novid"
+                position="-.5 0 1"
+                rotation="-90 0 0"
+                scale=".3 .3 .3"
+                modify-materials
+                >
+            </a-entity>
+        </a-marker>
+        <a-marker id="animated-marker07" type='pattern' preset="custom" url='Data/patterns/pattern-artag_588.patt'>
+          <a-entity
+              gltf-model="#ear"
+              position="1 1 0"
+              rotation="0 0 -90"
+              scale=".2 0.2 0.2"
+              >
+          </a-entity>
+
+        </a-marker>
+
+        <a-marker id="animated-marker08" type='pattern' preset="custom" url='Data/patterns/pattern-artag_700.patt'>
+          <a-entity gltf-model="#foot" scale=".5 .5 .5" rotation="-90 0 0" modify-materials>
+          <!-- <a-entity gltf-model="#napoleon" scale=".15 .15 .15" rotation="-90 0 0" position="0 0 1" shadow="cast: true" modify-materials animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"></a-entity>
+            <a-entity light="type: directional; color: #00F; intensity: 1.5" position="0 100 100"></a-entity> -->
+            <!-- <a-entity geometry="primitive:box; width: 10; height: 10; depth: 10" position="7 0 0" material="shader:flat;src:#pasimutogat;blending: additive; transparent:false; opacity: .35;" animation="property: rotation; to: 360 360 360; loop: true; dur: 10000"></a-entity>
+            <a-dodecahedron color="#FFFFFF" radius="10" position ="7 0 0" material="wireframe: true;" animation="property: rotation; to: -360 360 360; loop: true; dur: 30000"></a-dodecahedron> -->
+            <!-- <a-video src="#pasimutogat" position="10 0 0" rotation="30 0 0" width="16" height="12" material="blending: additive; transparent:true; opacity: .55;"></a-video> -->
+
+
+
+        </a-marker>
+
+
+        <a-marker id="animated-marker09" type='pattern' preset="custom" url='Data/patterns/pattern-artag_812.patt'>
+          <a-entity gltf-model="#bronze_kovetemel" scale=".5 .5 .5" rotation="-90 0 0"></a-entity>
+            <a-entity light="type: directional; color: #AAF; intensity: 1.5" position="0 100 100"></a-entity>
+
+        </a-marker>
+
+        <a-marker id="animated-marker10" type='pattern' preset="custom" url='Data/patterns/pattern-artag_924.patt'>
+<!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
+
+        <a-dodecahedron color="#FFFFFF" radius="1" material="wireframe: true;" animation="property: rotation; to: -360 360 360; loop: true; dur: 10000"></a-dodecahedron>
+
+        <a-entity
+            obj-model="obj: #LuYu; mtl:#LuYu_mtl"
+            position="0 0 0"
+            rotation="-90 0 0"
+            scale=".5 .5 .5"
+            material=" color:green; blending: additive; transparent:true; opacity: .95;"
+            modify-materials
+            <!-- material="src:url(Data/realistic-eyes.jpg); repeat: 1.1 1.1; opacity: .9;" -->
+            >
+        </a-entity>
+
+        </a-marker
+
+        >
+
+        <a-marker id="animated-marker11" type='pattern' preset="custom" url='Data/patterns/pattern-artag_1023.patt'>
+<!--            <a-entity geometry="primitive:box;" material="shader:video;src:url(Data/video.mp4);"></a-entity>-->
+        <a-entity
+            obj-model="obj: #pelenkaschildflipped"
+            position="0 0 0"
+            rotation="-90 0 0"
+            scale=".5 .5 .5"
+            material="src:url(Data/Giovanni_di_PaoloThe Creation_of-the_World_and_the_Expulsion_from_Paradise1445_cropped_small.png); repeat: 1.1 1.1; opacity: .9;"
+            >
+        </a-entity>
+        <!-- <a-entity
+            gltf-model="#kosztumoscsaj"
+            position="0 0 1"
+            rotation="0 0 90"
+            scale=".2 0.2 0.2"
+            material="shader:video;src:url(Data/MOV_SZEM.mp4);"
+            >
+        </a-entity>
+
+        <a-entity obj-model="obj: #casualwoman;"
+                  position="0 0 -5"
+                  rotation="0 0 90"
+                  material=" src: #my-video; repeat: 1 1; opacity: .9;"
+                  >
+        </a-entity> -->
+
+        </a-marker>
+
+        <!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+        <a-entity id="cam" camera></a-entity>
+        <a-entity light="type: ambient; color: #444"></a-entity>
+        <a-entity light="type: directional; color: #FFF; intensity: .5" position="1 10 10"></a-entity>
+        </a-scene>
+        <!-- Start the webcam stream and attach it to the video element -->
+<script>
+  // You can also set which camera to use (front/back/etc)
+  // @SEE https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
+  // navigator.mediaDevices.getUserMedia({audio: false, video: true})
+  // .then(stream => {
+  //   let $video = document.querySelector('#webcam')
+  //   $video.srcObject = stream
+  //   $video.onloadedmetadata = () => {
+  //     $video.play()
+  //   }
+  // })
+
+
+</script>
+    </body>
+</html>
