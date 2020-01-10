@@ -40,11 +40,10 @@
 <!--        <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>-->
         <a-scene id="a-scene" stats embedded arjs='sourceType: webcam; trackingMethod: best; sourceWidth:1280; sourceHeight:960; debugUIEnabled: false;' antialias="true" light="defaultLightsEnabled: false" vr-mode-ui="enabled: false" inspector="https://cdn.jsdelivr.net/gh/aframevr/aframe-inspector@master/dist/aframe-inspector.min.js">
         <a-assets>
-          <a-asset-item id="arc+orr" src="Data/arc+orr01.png" preload="auto"></a-asset-item>
 
             <a-asset-item id="pelenkaschild" src="Data/pelenkaschild01.obj" preload="auto"></a-asset-item>
             <a-asset-item id="pelenkaschildflipped" src="Data/pelenkaschild01flipped.obj" preload="auto"></a-asset-item>
-            <a-asset-item id="ear" src="Data/earcanal.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="ear" src="Data/earcanal2.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="bull" src="Data/bull.obj" preload="auto"></a-asset-item>
             <!-- <a-asset-item id="animated-asset" src="Data/ulocsaj03tex_anim.gltf" preload="auto"></a-asset-item> -->
 
@@ -52,16 +51,14 @@
             <a-asset-item id="orrszarvu" src="Data/Orrszarvu_tiny_notransp.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="bronze_kovetemel" src="Data/bronze_kovetemel.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="ulocsaj_origtex" src="Data/ulocsaj_origtext.gltf" preload="auto"></a-asset-item>
-            <a-asset-item id="deer" src="Data/deer.gltf" preload="auto"></a-asset-item>
-            <a-asset-item id="foot" src="Data/foot5.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="foot" src="Data/foot5tiny.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="soldier" src="Data/soldier.gltf" preload="auto"></a-asset-item>
-            <a-asset-item id="beethoven" src="Data/beethoven_grave.gltf" preload="auto"></a-asset-item>
+            <a-asset-item id="beethoven" src="Data/beethoven_grave_smalltex.gltf" preload="auto"></a-asset-item>
             <a-asset-item id="LuYu" src="Data/LuYu.obj" preload="auto"></a-asset-item>
             <a-asset-item id="LuYu_mtl" src="Data/LuYu.mtl" preload="auto"></a-asset-item>
             <a-asset-item id="drapszek" src="Data/drapszektiny.obj" preload="auto"></a-asset-item>
             <a-asset-item id="drapszek_novid" src="Data/drapszektiny_novid.gltf" preload="auto"></a-asset-item>
 
-            <a-asset-item id="kezek" src="Data/Cavepainting_hands_SantaCruz-CuevaManos_cropped2.png" preload="auto"></a-asset-item>
             <a-asset-item id="casualwoman" src="Data/casualwoman01.obj" preload="auto"></a-asset-item>
             <a-asset-item id="casualwoman_mtl" src="Data/casualwoman01.mtl" preload="auto"></a-asset-item>
             <a-asset-item id="casualwoman2" src="Data/casualwoman02.obj" preload="auto"></a-asset-item>
@@ -119,7 +116,7 @@
                           position="1 0 -0.6"
                           rotation="-90 0 0"
                           scale=".15 .15 .15"
-                          material="shader:standard; src:url(Data/honaljak.png); repeat: 1.1 1.1; opacity: 1; blending: additive"
+                          material="shader:standard; src:url(Data/honaljak.png); repeat: 1.1 1.1; opacity: 1; blending: normal"
                           >
                 </a-entity>
               </a-entity>
@@ -184,12 +181,13 @@
               position="1 1 0"
               rotation="0 0 -90"
               scale=".2 0.2 0.2"
+              modify-materials
               >
           </a-entity>
         </a-marker>
 
         <a-marker id="animated-marker08" type='pattern' preset="custom" url='Data/patterns/pattern-artag_700.patt'>
-          <a-entity gltf-model="#foot" scale=".5 .5 .5" rotation="-90 0 0" modify-materials></a-entity>
+          <a-entity gltf-model="#foot" scale=".2 .2 .2" rotation="-90 0 0" modify-materials></a-entity>
         </a-marker>
 
 
@@ -221,7 +219,7 @@
                 position="0 0 0"
                 rotation="-90 0 0"
                 scale=".5 .5 .5"
-                material="src:url(Data/Giovanni_di_PaoloThe Creation_of-the_World_and_the_Expulsion_from_Paradise1445_cropped_small.png); repeat: 1.1 1.1; opacity: .9;"
+                material="src:url(Data/Giovanni_di_PaoloThe Creation_of-the_World_and_the_Expulsion_from_Paradise1445_cropped_tiny.png); repeat: 1.1 1.1; opacity: .9;"
                 >
             </a-entity>
         </a-marker>
